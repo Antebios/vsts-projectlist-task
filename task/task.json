@@ -1,0 +1,49 @@
+{
+    "id": "4c28f375-4cca-4509-8f2f-def34483e374",
+    "name": "ProjectLister",
+    "friendlyName": "Project Lister",
+    "description": "Example extension to list Collection Projects.",
+    "author": "Richard Nunez",
+    "category": "Utility",
+    "visibility": [
+        "Build",
+        "Release"
+    ],
+    "demands": [],
+    "version": {
+        "Major": "0",
+        "Minor": "1",
+        "Patch": "6"
+    },
+    "minimumAgentVersion": "1.83.0",
+    "instanceNameFormat": "Project Lister",
+    "inputs": [
+        {
+            "name": "sourceProject",
+            "type": "pickList",
+            "label": "Source project",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Select the TFS Project.",
+            "properties": {
+                "EditableOptions": "True"
+            }
+        }
+    ],
+    "dataSourceBindings": [
+        {
+            "target": "sourceProject",
+            "endpointId": "tfs:teamfoundation",
+            "endpointURL": "{{endpoint.url}}/_apis/projects?api-version=1.0",
+            "resultSelector": "jsonpath:$.value[*]",
+            "resultTemplate": "{ \"Value\" : \"{{{id}}}\", \"DisplayValue\" : \"{{{name}}}\" }"
+        }
+    ],
+    "execution": {
+      "PowerShell": {
+        "target": "$(currentDirectory)\\Sample.ps1",
+        "argumentFormat": "",
+        "workingDirectory": "$(currentDirectory)"
+      }
+    }
+}

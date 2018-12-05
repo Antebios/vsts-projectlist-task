@@ -1,0 +1,60 @@
+{
+  "manifestVersion": 1,
+  "public": false,
+  "id": "ProjectLister",
+  "version": "0.1.6",
+  "name": "Project Lister",
+  "description": "Sample extention that tries to retreive the TFS Collection Projects.",
+  "publisher": "MacrossPlusInc",
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "icons": {
+    "default": "images/extension-icon.png"
+  },
+  "scopes": [
+    "vso.build",
+    "vso.build_execute"
+  ],
+  "categories": ["Azure Pipelines", "Azure Artifacts"],
+  "tags": [
+    "Sample",
+    "Projects"
+  ],
+  "content": {
+    "details": { "path": "README.md" },
+    "license": { "path": "LICENSE" }
+  },
+  "links": {
+    "repository": {"uri": "https://github.com/Antebios/vsts-projectlist-task"  },
+    "support": { "uri": "https://github.com/Antebios/vsts-projectlist-task/issues" }
+  },
+  "repository": { 
+    "type": "git", 
+    "uri": "https://github.com/Antebios/vsts-projectlist-task" 
+  },
+  "contributions": [
+    {
+      "id": "tfs-project-lister-task",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "task"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "images",
+      "addressable": true
+    },
+    {
+
+      "path": "task"
+    }
+  ]
+}
