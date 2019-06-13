@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "public": false,
   "id": "ProjectLister",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "name": "Project Lister",
   "description": "Sample extention that tries to retreive the TFS Collection Projects.",
   "publisher": "MacrossPlusInc",
@@ -18,7 +18,7 @@
     "vso.build",
     "vso.build_execute"
   ],
-  "categories": ["Azure Pipelines", "Azure Artifacts"],
+  "categories": ["Build and release"],
   "tags": [
     "Sample",
     "Projects"
